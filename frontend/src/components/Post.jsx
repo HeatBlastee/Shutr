@@ -25,7 +25,7 @@ const Post = ({ post }) => {
   const commentHandler = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/post/${post._id}/comment`,
+        `https://shutr.onrender.com/api/v1/post/${post._id}/comment`,
         { text },
         { withCredentials: true }
       );
@@ -49,7 +49,7 @@ const Post = ({ post }) => {
   const likeOrDislikeHandler = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/post/${post._id}/${liked ? "dislike" : "like"}`,
+        `https://shutr.onrender.com/api/v1/post/${post._id}/${liked ? "dislike" : "like"}`,
         { withCredentials: true }
       );
       if (res.data.success) {
