@@ -34,7 +34,7 @@ const CreatePost = ({ open, setOpen }) => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://shutr.onrender.com/api/v1/post/addpost",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/post/addpost`,
         formData,
         {
           headers: {

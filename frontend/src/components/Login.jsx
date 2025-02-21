@@ -28,7 +28,7 @@ const Login = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "https://shutr.onrender.com/api/v1/user/login",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/login`,
         input,
         {
           headers: {

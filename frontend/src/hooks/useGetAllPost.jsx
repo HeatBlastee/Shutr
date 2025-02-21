@@ -9,7 +9,7 @@ const useGetAllPost = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await axios.get("https://shutr.onrender.com/api/v1/post/all", { withCredentials: true });
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/post/all`, { withCredentials: true });
                 if (res.data.success) {
                     const sortedPosts = res.data.posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
                     dispatch(setPosts(sortedPosts));

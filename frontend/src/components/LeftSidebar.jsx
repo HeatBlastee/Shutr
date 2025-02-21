@@ -21,7 +21,7 @@ const LeftSidebar = () => {
 
     const logoutHandler = async () => {
       try {
-          const res = await axios.get('https://shutr.onrender.com/api/v1/user/logout', { withCredentials: true });
+          const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/logout`, { withCredentials: true });
           
           if (res.data.success) {
               dispatch(setAuthUser(null));
